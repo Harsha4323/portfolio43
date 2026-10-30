@@ -78,7 +78,7 @@ export const App: React.FC = () => {
   };
 
   return (
-    <div className={`relative min-h-screen bg-[#070709] text-white selection:bg-[#FF2626] selection:text-white ${reducedMotion ? 'reduced-motion' : ''}`}>
+    <div className={`relative min-h-screen min-h-[100dvh] w-full max-w-full overflow-x-hidden bg-[#070709] text-white selection:bg-[#FF2626] selection:text-white ${reducedMotion ? 'reduced-motion' : ''}`}>
       {/* 1. Cinematic Intro Screen (First Visit / On-Demand) */}
       {!introCompleted && (
         <IntroScreen
@@ -116,7 +116,7 @@ export const App: React.FC = () => {
       />
 
       {/* 5. Main Content Sections */}
-      <main className="relative z-10">
+      <main className="relative z-10 w-full max-w-full overflow-x-hidden">
         <Hero
           ref={sectionRefs.home as React.RefObject<HTMLElement>}
           onExploreClick={() => scrollToSection('projects')}

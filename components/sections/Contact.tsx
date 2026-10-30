@@ -111,17 +111,17 @@ export const Contact = forwardRef<HTMLElement, ContactProps>(({ initialService =
   };
 
   return (
-    <section id="contact" ref={ref} className="py-24 px-4 sm:px-6 lg:px-8 max-w-7xl mx-auto relative">
+    <section id="contact" ref={ref} className="py-16 sm:py-24 px-4 sm:px-6 lg:px-8 max-w-7xl mx-auto relative overflow-hidden">
       {/* Red ambient background glow */}
       <div className="absolute bottom-10 left-1/2 -translate-x-1/2 w-[500px] h-[350px] bg-brand-red/15 rounded-full blur-[150px] pointer-events-none -z-10" />
 
       {/* Section Header */}
-      <div className="flex flex-col items-center text-center mb-16">
+      <div className="flex flex-col items-center text-center mb-12 sm:mb-16">
         <div className="inline-flex items-center gap-2 px-3.5 py-1 rounded-full bg-brand-red/10 border border-brand-red/30 text-brand-red text-xs font-mono uppercase tracking-widest mb-3">
           <MessageSquare className="w-3.5 h-3.5" />
           <span>Enquiry &amp; Collaboration</span>
         </div>
-        <h2 className="font-display font-extrabold text-3xl sm:text-5xl text-white tracking-tight">
+        <h2 className="font-display font-extrabold text-2xl xs:text-3xl sm:text-5xl text-white tracking-tight break-words">
           Have an Idea? <span className="text-brand-red">Let&apos;s Build It.</span>
         </h2>
         <p className="mt-4 text-zinc-300 text-sm sm:text-base max-w-2xl leading-relaxed">
@@ -308,7 +308,7 @@ export const Contact = forwardRef<HTMLElement, ContactProps>(({ initialService =
                       placeholder="e.g. Harsha or Business Name"
                       className={`w-full min-w-0 px-3.5 py-2.5 sm:px-4 sm:py-3 rounded-xl bg-[#09090D] border ${
                         errors.name ? 'border-red-500' : 'border-white/10 focus:border-brand-red'
-                      } text-white text-xs sm:text-sm outline-none transition-all placeholder:text-zinc-600`}
+                      } text-white text-base sm:text-sm outline-none transition-all placeholder:text-zinc-600`}
                     />
                     {errors.name && (
                       <p className="text-red-400 text-xs mt-1 flex items-center gap-1">
@@ -330,7 +330,7 @@ export const Contact = forwardRef<HTMLElement, ContactProps>(({ initialService =
                       placeholder="name@company.com"
                       className={`w-full min-w-0 px-3.5 py-2.5 sm:px-4 sm:py-3 rounded-xl bg-[#09090D] border ${
                         errors.email ? 'border-red-500' : 'border-white/10 focus:border-brand-red'
-                      } text-white text-xs sm:text-sm outline-none transition-all placeholder:text-zinc-600`}
+                      } text-white text-base sm:text-sm outline-none transition-all placeholder:text-zinc-600`}
                     />
                     {errors.email && (
                       <p className="text-red-400 text-xs mt-1 flex items-center gap-1">
@@ -349,7 +349,8 @@ export const Contact = forwardRef<HTMLElement, ContactProps>(({ initialService =
                   <select
                     value={formData.projectType}
                     onChange={(e) => setFormData({ ...formData, projectType: e.target.value })}
-                    className="w-full min-w-0 px-3.5 py-2.5 sm:px-4 sm:py-3 rounded-xl bg-[#09090D] border border-white/10 focus:border-brand-red text-white text-xs sm:text-sm outline-none transition-all truncate"
+                    style={{ colorScheme: 'dark' }}
+                    className="w-full min-w-0 px-3.5 py-2.5 sm:px-4 sm:py-3 rounded-xl bg-[#09090D] border border-white/10 focus:border-brand-red text-white text-base sm:text-sm outline-none transition-all truncate"
                   >
                     <option value="Website Design & Development">Website Design &amp; Development</option>
                     <option value="Video Editing">Video Editing (Reels, Promos, Brand Content)</option>
@@ -373,7 +374,7 @@ export const Contact = forwardRef<HTMLElement, ContactProps>(({ initialService =
                     placeholder="Describe your project requirements, goals, preferred timeline..."
                     className={`w-full min-w-0 px-3.5 py-2.5 sm:px-4 sm:py-3 rounded-xl bg-[#09090D] border ${
                       errors.message ? 'border-red-500' : 'border-white/10 focus:border-brand-red'
-                    } text-white text-xs sm:text-sm outline-none transition-all placeholder:text-zinc-600 resize-none`}
+                    } text-white text-base sm:text-sm outline-none transition-all placeholder:text-zinc-600 resize-none`}
                   />
                   {errors.message && (
                     <p className="text-red-400 text-xs mt-1 flex items-center gap-1">

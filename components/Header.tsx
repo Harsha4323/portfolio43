@@ -128,7 +128,7 @@ export const Header: React.FC<HeaderProps> = ({
         <div className="flex items-center gap-2 lg:hidden">
           <button
             onClick={() => setIsMenuOpen(!isMenuOpen)}
-            className="p-2 rounded-lg bg-zinc-900 border border-white/10 text-zinc-200 hover:text-white focus:outline-none"
+            className="min-w-[44px] min-h-[44px] flex items-center justify-center p-2 rounded-lg bg-zinc-900 border border-white/10 text-zinc-200 hover:text-white focus:outline-none focus:ring-1 focus:ring-brand-red active:scale-95 transition-all"
             aria-label="Toggle mobile navigation menu"
           >
             {isMenuOpen ? <X className="w-6 h-6 text-brand-red" /> : <Menu className="w-6 h-6" />}
@@ -138,11 +138,13 @@ export const Header: React.FC<HeaderProps> = ({
 
       {/* Mobile Drawer */}
       <div
-        className={`lg:hidden fixed inset-x-0 top-[65px] bg-[#0A0A0F]/95 backdrop-blur-2xl border-b border-white/10 transition-all duration-300 overflow-hidden shadow-2xl ${
-          isMenuOpen ? 'max-h-[500px] py-6 opacity-100' : 'max-h-0 py-0 opacity-0 pointer-events-none'
+        className={`lg:hidden absolute top-full left-0 right-0 w-full bg-[#0A0A0F]/95 backdrop-blur-2xl border-b border-white/10 transition-all duration-300 shadow-2xl ${
+          isMenuOpen
+            ? 'max-h-[calc(100dvh-4rem)] py-6 opacity-100 overflow-y-auto'
+            : 'max-h-0 py-0 opacity-0 overflow-hidden pointer-events-none'
         }`}
       >
-        <div className="px-6 flex flex-col gap-3">
+        <div className="px-5 sm:px-6 flex flex-col gap-2.5 sm:gap-3">
           {navLinks.map((link) => {
             const isActive = activeSection === link.id;
             return (
@@ -150,14 +152,14 @@ export const Header: React.FC<HeaderProps> = ({
                 key={link.id}
                 href={`#${link.id}`}
                 onClick={(e) => handleLinkClick(e, link.id)}
-                className={`py-2 px-4 rounded-lg text-sm font-medium transition-colors flex items-center justify-between ${
+                className={`py-2.5 px-4 rounded-lg text-sm font-medium transition-colors flex items-center justify-between min-h-[40px] ${
                   isActive
                     ? 'bg-brand-red/15 text-white border-l-4 border-brand-red font-semibold'
                     : 'text-zinc-400 hover:text-white hover:bg-white/5'
                 }`}
               >
                 <span>{link.label}</span>
-                {isActive && <span className="w-1.5 h-1.5 rounded-full bg-brand-red" />}
+                {isActive && <span className="w-1.5 h-1.5 rounded-full bg-brand-red flex-shrink-0" />}
               </a>
             );
           })}
@@ -168,7 +170,7 @@ export const Header: React.FC<HeaderProps> = ({
                 onLinkClick('contact');
                 setIsMenuOpen(false);
               }}
-              className="w-full py-3 rounded-lg bg-brand-red text-white text-xs uppercase font-bold tracking-wider flex items-center justify-center gap-2 shadow-[0_0_15px_rgba(255,38,38,0.5)]"
+              className="w-full min-h-[44px] py-3 rounded-lg bg-brand-red hover:bg-brand-red-light text-white text-xs uppercase font-bold tracking-wider flex items-center justify-center gap-2 shadow-[0_0_15px_rgba(255,38,38,0.5)] active:scale-[0.98] transition-all"
             >
               <span>Let&apos;s Work Together</span>
               <ArrowUpRight className="w-4 h-4" />

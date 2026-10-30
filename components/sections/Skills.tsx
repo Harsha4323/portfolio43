@@ -56,14 +56,14 @@ export const Skills = forwardRef<HTMLElement>((_, ref) => {
       : skillsList.filter((s) => s.category === activeCategory);
 
   return (
-    <section id="skills" ref={ref} className="py-24 px-4 sm:px-6 lg:px-8 max-w-7xl mx-auto relative">
+    <section id="skills" ref={ref} className="py-16 sm:py-24 px-4 sm:px-6 lg:px-8 max-w-7xl mx-auto relative overflow-hidden">
       {/* Section Header */}
-      <div className="flex flex-col items-center text-center mb-12">
+      <div className="flex flex-col items-center text-center mb-8 sm:mb-12">
         <div className="inline-flex items-center gap-2 px-3.5 py-1 rounded-full bg-brand-red/10 border border-brand-red/30 text-brand-red text-xs font-mono uppercase tracking-widest mb-3">
           <Cpu className="w-3.5 h-3.5" />
           <span>Technical Stack</span>
         </div>
-        <h2 className="font-display font-extrabold text-3xl sm:text-5xl text-white tracking-tight">
+        <h2 className="font-display font-extrabold text-2xl xs:text-3xl sm:text-5xl text-white tracking-tight break-words">
           Technologies &amp; <span className="text-brand-red">Tooling</span>
         </h2>
         <p className="mt-4 text-zinc-400 text-sm sm:text-base max-w-xl">
@@ -96,7 +96,7 @@ export const Skills = forwardRef<HTMLElement>((_, ref) => {
           return (
             <div
               key={index}
-              className="group glass-panel rounded-xl p-3 sm:p-4 lg:p-5 flex flex-col justify-between transition-all duration-300 hover:-translate-y-1 hover:border-brand-red/40 hover:shadow-[0_8px_25px_rgba(255,38,38,0.15)] relative overflow-hidden min-w-0"
+              className="group glass-panel rounded-xl p-2.5 xs:p-3 sm:p-4 lg:p-5 flex flex-col justify-between transition-all duration-300 hover:-translate-y-1 hover:border-brand-red/40 hover:shadow-[0_8px_25px_rgba(255,38,38,0.15)] relative overflow-hidden min-w-0"
             >
               {/* Corner subtle red glow */}
               <div className="absolute top-0 right-0 w-12 h-12 bg-brand-red/10 rounded-full blur-xl group-hover:bg-brand-red/20 transition-colors pointer-events-none" />

@@ -1,19 +1,28 @@
 /* WebGonex Global Styles & Motion System */
 
 @layer base {
-  * {
+  *, *::before, *::after {
     box-sizing: border-box;
   }
   
   html {
     scroll-behavior: smooth;
     font-feature-settings: "cv02", "cv03", "cv04", "cv11";
+    -webkit-text-size-adjust: 100%;
+    text-size-adjust: 100%;
+    overflow-x: hidden;
+    max-width: 100%;
+    width: 100%;
   }
 
   body {
     background-color: #070709;
     color: #F3F3F7;
     overflow-x: hidden;
+    max-width: 100%;
+    width: 100%;
+    position: relative;
+    -webkit-tap-highlight-color: transparent;
   }
 }
 

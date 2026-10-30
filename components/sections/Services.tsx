@@ -95,17 +95,17 @@ export const Services = forwardRef<HTMLElement, ServicesProps>(({ onSelectServic
   ];
 
   return (
-    <section id="services" ref={ref} className="py-24 px-4 sm:px-6 lg:px-8 max-w-7xl mx-auto relative">
+    <section id="services" ref={ref} className="py-16 sm:py-24 px-4 sm:px-6 lg:px-8 max-w-7xl mx-auto relative overflow-hidden">
       {/* Background Subtle Ambient Glow */}
       <div className="absolute top-1/3 right-0 w-[400px] h-[400px] bg-brand-red/10 rounded-full blur-[140px] pointer-events-none -z-10" />
 
       {/* Section Header */}
-      <div className="flex flex-col items-center text-center mb-16">
+      <div className="flex flex-col items-center text-center mb-12 sm:mb-16">
         <div className="inline-flex items-center gap-2 px-3.5 py-1 rounded-full bg-brand-red/10 border border-brand-red/30 text-brand-red text-xs font-mono uppercase tracking-widest mb-3">
           <Sparkles className="w-3.5 h-3.5" />
           <span>Services &amp; Capabilities</span>
         </div>
-        <h2 className="font-display font-extrabold text-3xl sm:text-5xl text-white tracking-tight">
+        <h2 className="font-display font-extrabold text-2xl xs:text-3xl sm:text-5xl text-white tracking-tight break-words">
           What I Can Build <span className="text-brand-red">For You</span>
         </h2>
         <p className="mt-4 text-zinc-400 text-sm sm:text-base max-w-xl">
@@ -114,8 +114,8 @@ export const Services = forwardRef<HTMLElement, ServicesProps>(({ onSelectServic
         <div className="w-20 h-1 bg-gradient-to-r from-brand-red to-orange-500 rounded-full mt-4"></div>
       </div>
 
-      {/* Services 6-Card Grid (2 columns on mobile, 3 columns on desktop) */}
-      <div className="grid grid-cols-2 lg:grid-cols-3 gap-3 sm:gap-6 lg:gap-8">
+      {/* Services 6-Card Grid (1 col on <=320px, 2 col on 360px+ / iPhone, 3 col on desktop) */}
+      <div className="grid grid-cols-1 xs:grid-cols-2 lg:grid-cols-3 gap-3 sm:gap-6 lg:gap-8">
         {serviceList.map((service) => {
           const Icon = service.icon;
           return (
@@ -166,7 +166,7 @@ export const Services = forwardRef<HTMLElement, ServicesProps>(({ onSelectServic
               {/* Action Link to Contact Form */}
               <button
                 onClick={() => onSelectService && onSelectService(service.title)}
-                className="w-full py-2 px-2 sm:py-2.5 sm:px-4 rounded-lg sm:rounded-xl bg-white/[0.03] hover:bg-brand-red group-hover:border-brand-red/40 border border-white/10 text-zinc-300 hover:text-white text-[10px] sm:text-xs font-semibold uppercase tracking-wider flex items-center justify-between transition-all duration-300 group-hover:shadow-[0_0_15px_rgba(255,38,38,0.3)] min-w-0"
+                className="w-full py-2 px-2 sm:py-2.5 sm:px-4 rounded-lg sm:rounded-xl bg-white/[0.03] hover:bg-brand-red group-hover:border-brand-red/40 border border-white/10 text-zinc-300 hover:text-white text-[10px] sm:text-xs font-semibold uppercase tracking-normal sm:tracking-wider flex items-center justify-between transition-all duration-300 group-hover:shadow-[0_0_15px_rgba(255,38,38,0.3)] min-w-0 min-h-[38px] active:scale-[0.98]"
               >
                 <span className="truncate">Discuss Service</span>
                 <ArrowUpRight className="w-3.5 h-3.5 flex-shrink-0 transition-transform group-hover:translate-x-0.5 group-hover:-translate-y-0.5" />

@@ -107,13 +107,13 @@ export const IntroScreen: React.FC<IntroScreenProps> = ({ onComplete, reducedMot
       {/* Skip Button */}
       <button
         onClick={handleSkip}
-        className="absolute top-4 right-4 sm:top-6 sm:right-8 text-[10px] sm:text-xs font-mono uppercase tracking-widest text-zinc-400 hover:text-white transition-colors border border-white/10 hover:border-brand-red/40 px-3 py-1.5 rounded-full backdrop-blur-md z-30"
+        className="absolute top-4 right-4 sm:top-6 sm:right-8 text-[10px] sm:text-xs font-mono uppercase tracking-wider text-zinc-400 hover:text-white transition-colors border border-white/10 hover:border-brand-red/40 px-3.5 py-2 min-h-[40px] flex items-center rounded-full backdrop-blur-md z-30 active:scale-95"
       >
         Skip Intro &gt;&gt;
       </button>
 
       {/* Central Content */}
-      <div className="relative z-20 flex flex-col items-center px-6 text-center max-w-lg">
+      <div className="relative z-20 flex flex-col items-center px-4 sm:px-6 text-center max-w-[calc(100vw-2rem)] sm:max-w-lg">
         {/* Step 1 & 2: WebGonex Logo */}
         <div
           className={`transition-all duration-700 ease-out transform ${
@@ -129,16 +129,16 @@ export const IntroScreen: React.FC<IntroScreenProps> = ({ onComplete, reducedMot
             step >= 3 ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-3'
           }`}
         >
-          <p className="font-display text-lg md:text-xl font-medium tracking-wide text-zinc-300">
+          <p className="font-display text-base xs:text-lg md:text-xl font-medium tracking-wide text-zinc-300">
             Ideas into <span className="text-brand-red font-bold text-glow-subtle">Digital Experiences.</span>
           </p>
-          <p className="font-mono text-xs text-zinc-400 tracking-widest uppercase mt-1">
+          <p className="font-mono text-[11px] xs:text-xs text-zinc-400 tracking-wider uppercase mt-1">
             Independent Creative Freelancer
           </p>
         </div>
 
         {/* Minimalist Progress Line */}
-        <div className="w-56 h-[3px] bg-zinc-800/80 rounded-full overflow-hidden mt-8 relative border border-white/5">
+        <div className="w-48 xs:w-56 max-w-full h-[3px] bg-zinc-800/80 rounded-full overflow-hidden mt-8 relative border border-white/5">
           <div
             className="h-full bg-gradient-to-r from-brand-red to-orange-500 rounded-full transition-all duration-100 ease-out shadow-[0_0_12px_#FF2626]"
             style={{ width: `${progress}%` }}

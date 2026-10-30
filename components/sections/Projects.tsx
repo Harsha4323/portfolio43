@@ -86,17 +86,17 @@ export const Projects = forwardRef<HTMLElement>((_, ref) => {
   const currentProject = projectData[activeProjectIndex];
 
   return (
-    <section id="projects" ref={ref} className="py-24 px-4 sm:px-6 lg:px-8 max-w-7xl mx-auto relative">
+    <section id="projects" ref={ref} className="py-16 sm:py-24 px-4 sm:px-6 lg:px-8 max-w-7xl mx-auto relative overflow-hidden">
       {/* Background Glow */}
       <div className="absolute top-1/2 left-0 w-[500px] h-[500px] bg-brand-red/10 rounded-full blur-[160px] pointer-events-none -z-10" />
 
       {/* Section Header */}
-      <div className="flex flex-col items-center text-center mb-12">
+      <div className="flex flex-col items-center text-center mb-8 sm:mb-12">
         <div className="inline-flex items-center gap-2 px-3.5 py-1 rounded-full bg-brand-red/10 border border-brand-red/30 text-brand-red text-xs font-mono uppercase tracking-widest mb-3">
           <Layers className="w-3.5 h-3.5" />
           <span>Verified Project Portfolio</span>
         </div>
-        <h2 className="font-display font-extrabold text-3xl sm:text-5xl text-white tracking-tight">
+        <h2 className="font-display font-extrabold text-2xl xs:text-3xl sm:text-5xl text-white tracking-tight break-words">
           Featured <span className="text-brand-red">Creations</span>
         </h2>
         <p className="mt-4 text-zinc-400 text-sm sm:text-base max-w-xl">
@@ -105,7 +105,7 @@ export const Projects = forwardRef<HTMLElement>((_, ref) => {
         <div className="w-20 h-1 bg-gradient-to-r from-brand-red to-orange-500 rounded-full mt-4"></div>
 
         {/* View Mode Switcher & Slider Controls */}
-        <div className="flex items-center gap-4 mt-8">
+        <div className="flex flex-wrap items-center justify-center gap-3 sm:gap-4 mt-6 sm:mt-8">
           <div className="flex items-center p-1 bg-[#101016] border border-white/10 rounded-full">
             <button
               onClick={() => setViewMode('slider')}
@@ -261,24 +261,24 @@ export const Projects = forwardRef<HTMLElement>((_, ref) => {
               <div className="lg:col-span-6 min-w-0">
                 <div className="rounded-2xl border border-white/15 bg-[#09090D] overflow-hidden shadow-2xl relative group">
                   {/* Mockup Window Chrome Header */}
-                  <div className="px-4 py-3 bg-[#13131A] border-b border-white/10 flex items-center justify-between">
-                    <div className="flex items-center gap-2">
-                      <span className="w-3 h-3 rounded-full bg-red-500/80 inline-block"></span>
-                      <span className="w-3 h-3 rounded-full bg-yellow-500/80 inline-block"></span>
-                      <span className="w-3 h-3 rounded-full bg-green-500/80 inline-block"></span>
+                  <div className="px-3 sm:px-4 py-2.5 sm:py-3 bg-[#13131A] border-b border-white/10 flex items-center justify-between gap-2 min-w-0">
+                    <div className="flex items-center gap-1.5 sm:gap-2 flex-shrink-0">
+                      <span className="w-2.5 h-2.5 sm:w-3 sm:h-3 rounded-full bg-red-500/80 inline-block"></span>
+                      <span className="w-2.5 h-2.5 sm:w-3 sm:h-3 rounded-full bg-yellow-500/80 inline-block"></span>
+                      <span className="w-2.5 h-2.5 sm:w-3 sm:h-3 rounded-full bg-green-500/80 inline-block"></span>
                     </div>
-                    <div className="font-mono text-[11px] text-zinc-400 px-3 py-0.5 rounded bg-black/40 border border-white/5 truncate max-w-[200px]">
+                    <div className="font-mono text-[10px] sm:text-[11px] text-zinc-400 px-2 sm:px-3 py-0.5 rounded bg-black/40 border border-white/5 truncate max-w-[140px] xs:max-w-[180px] sm:max-w-[220px]">
                       {currentProject.id === 'abhista-infra'
                         ? 'abhistainfra.com'
                         : currentProject.id === 'sparsha-mehendi'
                         ? 'sparshamehandiarts.netlify.app'
                         : 'student-results.internal/auth'}
                     </div>
-                    <div className="text-zinc-600 text-xs font-mono">2026.v1</div>
+                    <div className="text-zinc-600 text-[10px] sm:text-xs font-mono flex-shrink-0">2026.v1</div>
                   </div>
 
                   {/* Mockup Screen Viewport */}
-                  <div className="p-6 sm:p-8 min-h-[340px] flex flex-col justify-between bg-gradient-to-br from-[#0B0B10] to-[#12121A] relative">
+                  <div className="p-3.5 sm:p-8 min-h-[300px] sm:min-h-[340px] flex flex-col justify-between bg-gradient-to-br from-[#0B0B10] to-[#12121A] relative">
                     {/* Watermark Logo */}
                     <div className="absolute right-4 bottom-4 opacity-10 pointer-events-none">
                       <span className="font-display font-black text-7xl text-white">WG</span>
@@ -336,15 +336,15 @@ export const Projects = forwardRef<HTMLElement>((_, ref) => {
                           </div>
                         </div>
 
-                        <div className="p-4 rounded-xl bg-white/[0.02] border border-white/10">
+                        <div className="p-3.5 sm:p-4 rounded-xl bg-white/[0.02] border border-white/10">
                           <div className="text-brand-red font-mono text-xs uppercase mb-1">Interactive Sections</div>
-                          <div className="grid grid-cols-3 gap-2 text-[11px] text-zinc-300">
-                            <div className="p-2 rounded bg-white/[0.03] border border-white/5 text-center">Home Hero</div>
-                            <div className="p-2 rounded bg-white/[0.03] border border-white/5 text-center">About Story</div>
-                            <div className="p-2 rounded bg-white/[0.03] border border-white/5 text-center">Service Tier</div>
-                            <div className="p-2 rounded bg-white/[0.03] border border-white/5 text-center">Live FAQ</div>
-                            <div className="p-2 rounded bg-white/[0.03] border border-white/5 text-center">Design Gallery</div>
-                            <div className="p-2 rounded bg-white/[0.03] border border-white/5 text-center">Booking Form</div>
+                          <div className="grid grid-cols-2 xs:grid-cols-3 gap-1.5 sm:gap-2 text-[10px] sm:text-[11px] text-zinc-300">
+                            <div className="p-1.5 sm:p-2 rounded bg-white/[0.03] border border-white/5 text-center">Home Hero</div>
+                            <div className="p-1.5 sm:p-2 rounded bg-white/[0.03] border border-white/5 text-center">About Story</div>
+                            <div className="p-1.5 sm:p-2 rounded bg-white/[0.03] border border-white/5 text-center">Service Tier</div>
+                            <div className="p-1.5 sm:p-2 rounded bg-white/[0.03] border border-white/5 text-center">Live FAQ</div>
+                            <div className="p-1.5 sm:p-2 rounded bg-white/[0.03] border border-white/5 text-center">Design Gallery</div>
+                            <div className="p-1.5 sm:p-2 rounded bg-white/[0.03] border border-white/5 text-center">Booking Form</div>
                           </div>
                         </div>
 
@@ -367,21 +367,21 @@ export const Projects = forwardRef<HTMLElement>((_, ref) => {
                           </div>
                         </div>
 
-                        <div className="grid grid-cols-3 gap-2">
-                          <div className="p-3 rounded-xl bg-white/[0.03] border border-white/10 flex flex-col items-center text-center">
-                            <Shield className="w-5 h-5 text-brand-red mb-1" />
-                            <span className="text-xs font-bold text-white">Admin</span>
-                            <span className="text-[10px] text-zinc-400">Upload &amp; Edit</span>
+                        <div className="grid grid-cols-3 gap-1.5 sm:gap-2">
+                          <div className="p-2 sm:p-3 rounded-xl bg-white/[0.03] border border-white/10 flex flex-col items-center text-center min-w-0">
+                            <Shield className="w-4 h-4 sm:w-5 sm:h-5 text-brand-red mb-1" />
+                            <span className="text-[11px] sm:text-xs font-bold text-white">Admin</span>
+                            <span className="text-[9px] sm:text-[10px] text-zinc-400 leading-tight">Upload &amp; Edit</span>
                           </div>
-                          <div className="p-3 rounded-xl bg-white/[0.03] border border-white/10 flex flex-col items-center text-center">
-                            <UserCheck className="w-5 h-5 text-emerald-400 mb-1" />
-                            <span className="text-xs font-bold text-white">Student</span>
-                            <span className="text-[10px] text-zinc-400">Scorecard View</span>
+                          <div className="p-2 sm:p-3 rounded-xl bg-white/[0.03] border border-white/10 flex flex-col items-center text-center min-w-0">
+                            <UserCheck className="w-4 h-4 sm:w-5 sm:h-5 text-emerald-400 mb-1" />
+                            <span className="text-[11px] sm:text-xs font-bold text-white">Student</span>
+                            <span className="text-[9px] sm:text-[10px] text-zinc-400 leading-tight">Scorecard View</span>
                           </div>
-                          <div className="p-3 rounded-xl bg-white/[0.03] border border-white/10 flex flex-col items-center text-center">
-                            <Lock className="w-5 h-5 text-sky-400 mb-1" />
-                            <span className="text-xs font-bold text-white">Parent</span>
-                            <span className="text-[10px] text-zinc-400">Secure Access</span>
+                          <div className="p-2 sm:p-3 rounded-xl bg-white/[0.03] border border-white/10 flex flex-col items-center text-center min-w-0">
+                            <Lock className="w-4 h-4 sm:w-5 sm:h-5 text-sky-400 mb-1" />
+                            <span className="text-[11px] sm:text-xs font-bold text-white">Parent</span>
+                            <span className="text-[9px] sm:text-[10px] text-zinc-400 leading-tight">Secure Access</span>
                           </div>
                         </div>
 
@@ -410,9 +410,9 @@ export const Projects = forwardRef<HTMLElement>((_, ref) => {
         </div>
       )}
 
-      {/* GRID VIEW MODE (2 columns on mobile, 3 columns on desktop) */}
+      {/* GRID VIEW MODE */}
       {viewMode === 'grid' && (
-        <div className="grid grid-cols-2 lg:grid-cols-3 gap-3 sm:gap-6 lg:gap-8">
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 sm:gap-6 lg:gap-8">
           {projectData.map((project) => (
             <div
               key={project.id}
@@ -531,7 +531,7 @@ export const Projects = forwardRef<HTMLElement>((_, ref) => {
                 </div>
               </div>
 
-              <div className="pt-4 border-t border-white/10 flex flex-wrap gap-3">
+              <div className="pt-4 border-t border-white/10 flex flex-col sm:flex-row gap-3">
                 {selectedModalProject.liveUrl && selectedModalProject.liveUrl.startsWith('http') && (
                   <a
                     href={selectedModalProject.liveUrl}

@@ -46,17 +46,17 @@ export const Process = forwardRef<HTMLElement>((_, ref) => {
   ];
 
   return (
-    <section id="process" ref={ref} className="py-24 px-4 sm:px-6 lg:px-8 max-w-7xl mx-auto relative">
+    <section id="process" ref={ref} className="py-16 sm:py-24 px-4 sm:px-6 lg:px-8 max-w-7xl mx-auto relative overflow-hidden">
       {/* Background glow */}
       <div className="absolute top-1/2 right-1/4 w-[400px] h-[400px] bg-brand-red/10 rounded-full blur-[150px] pointer-events-none -z-10" />
 
       {/* Section Header */}
-      <div className="flex flex-col items-center text-center mb-16">
+      <div className="flex flex-col items-center text-center mb-12 sm:mb-16">
         <div className="inline-flex items-center gap-2 px-3.5 py-1 rounded-full bg-brand-red/10 border border-brand-red/30 text-brand-red text-xs font-mono uppercase tracking-widest mb-3">
           <Compass className="w-3.5 h-3.5" />
           <span>Methodology</span>
         </div>
-        <h2 className="font-display font-extrabold text-3xl sm:text-5xl text-white tracking-tight">
+        <h2 className="font-display font-extrabold text-2xl xs:text-3xl sm:text-5xl text-white tracking-tight break-words">
           How I Bring Ideas <span className="text-brand-red">To Life</span>
         </h2>
         <p className="mt-4 text-zinc-400 text-sm sm:text-base max-w-xl">
@@ -65,14 +65,14 @@ export const Process = forwardRef<HTMLElement>((_, ref) => {
         <div className="w-20 h-1 bg-gradient-to-r from-brand-red to-orange-500 rounded-full mt-4"></div>
       </div>
 
-      {/* Step Cards Grid (2 columns on mobile, 5 columns on desktop) */}
-      <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-3 sm:gap-6 relative">
+      {/* Step Cards Grid */}
+      <div className="grid grid-cols-1 xs:grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-3 sm:gap-6 relative">
         {steps.map((step) => {
           const Icon = step.icon;
           return (
             <div
               key={step.num}
-              className="group glass-panel rounded-xl sm:rounded-2xl p-3.5 sm:p-6 flex flex-col justify-between transition-all duration-300 hover:-translate-y-2 hover:border-brand-red/50 hover:shadow-[0_10px_30px_rgba(255,38,38,0.2)] relative overflow-hidden min-w-0 last:col-span-2 md:last:col-span-1"
+              className="group glass-panel rounded-xl sm:rounded-2xl p-3 xs:p-3.5 sm:p-6 flex flex-col justify-between transition-all duration-300 hover:-translate-y-2 hover:border-brand-red/50 hover:shadow-[0_10px_30px_rgba(255,38,38,0.2)] relative overflow-hidden min-w-0 last:col-span-1 xs:last:col-span-2 md:last:col-span-1"
             >
               {/* Step Top Bar */}
               <div className="flex items-center justify-between mb-3 sm:mb-6 gap-1">

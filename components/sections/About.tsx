@@ -12,14 +12,14 @@ export const About = forwardRef<HTMLElement>((_, ref) => {
   } | null>(null);
 
   return (
-    <section id="about" ref={ref} className="py-24 px-4 sm:px-6 lg:px-8 max-w-7xl mx-auto relative">
+    <section id="about" ref={ref} className="py-16 sm:py-24 px-4 sm:px-6 lg:px-8 max-w-7xl mx-auto relative overflow-hidden">
       {/* Section Header */}
-      <div className="flex flex-col items-center text-center mb-16">
+      <div className="flex flex-col items-center text-center mb-12 sm:mb-16">
         <div className="inline-flex items-center gap-2 px-3.5 py-1 rounded-full bg-brand-red/10 border border-brand-red/30 text-brand-red text-xs font-mono uppercase tracking-widest mb-3">
           <User className="w-3.5 h-3.5" />
           <span>About Me</span>
         </div>
-        <h2 className="font-display font-extrabold text-3xl sm:text-5xl text-white tracking-tight">
+        <h2 className="font-display font-extrabold text-2xl xs:text-3xl sm:text-5xl text-white tracking-tight break-words">
           Architecting Clean Code &amp; <span className="text-brand-red">Modern Interfaces</span>
         </h2>
         <div className="w-20 h-1 bg-gradient-to-r from-brand-red to-orange-500 rounded-full mt-4"></div>
@@ -143,10 +143,10 @@ export const About = forwardRef<HTMLElement>((_, ref) => {
         {/* Right Column: Interactive Tabs for Background Details */}
         <div className="lg:col-span-7 flex flex-col gap-6 min-w-0">
           {/* Tab Selector */}
-          <div className="flex items-center gap-1.5 sm:gap-2 p-1 sm:p-1.5 bg-[#0F0F16] border border-white/10 rounded-xl w-full max-w-md">
+          <div className="flex items-center gap-1 sm:gap-2 p-1 sm:p-1.5 bg-[#0F0F16] border border-white/10 rounded-xl w-full max-w-md">
             <button
               onClick={() => setActiveTab('profile')}
-              className={`flex-1 py-1.5 sm:py-2 px-2 sm:px-3 rounded-lg text-[11px] sm:text-xs font-medium transition-all truncate text-center ${
+              className={`flex-1 py-1.5 sm:py-2 px-1.5 xs:px-2.5 sm:px-3 rounded-lg text-[10px] xs:text-[11px] sm:text-xs font-medium transition-all text-center whitespace-nowrap overflow-hidden text-ellipsis ${
                 activeTab === 'profile'
                   ? 'bg-brand-red text-white shadow-[0_0_15px_rgba(255,38,38,0.4)]'
                   : 'text-zinc-400 hover:text-white'
@@ -156,7 +156,7 @@ export const About = forwardRef<HTMLElement>((_, ref) => {
             </button>
             <button
               onClick={() => setActiveTab('education')}
-              className={`flex-1 py-1.5 sm:py-2 px-2 sm:px-3 rounded-lg text-[11px] sm:text-xs font-medium transition-all truncate text-center ${
+              className={`flex-1 py-1.5 sm:py-2 px-1.5 xs:px-2.5 sm:px-3 rounded-lg text-[10px] xs:text-[11px] sm:text-xs font-medium transition-all text-center whitespace-nowrap overflow-hidden text-ellipsis ${
                 activeTab === 'education'
                   ? 'bg-brand-red text-white shadow-[0_0_15px_rgba(255,38,38,0.4)]'
                   : 'text-zinc-400 hover:text-white'
@@ -166,7 +166,7 @@ export const About = forwardRef<HTMLElement>((_, ref) => {
             </button>
             <button
               onClick={() => setActiveTab('certifications')}
-              className={`flex-1 py-1.5 sm:py-2 px-2 sm:px-3 rounded-lg text-[11px] sm:text-xs font-medium transition-all truncate text-center ${
+              className={`flex-1 py-1.5 sm:py-2 px-1.5 xs:px-2.5 sm:px-3 rounded-lg text-[10px] xs:text-[11px] sm:text-xs font-medium transition-all text-center whitespace-nowrap overflow-hidden text-ellipsis ${
                 activeTab === 'certifications'
                   ? 'bg-brand-red text-white shadow-[0_0_15px_rgba(255,38,38,0.4)]'
                   : 'text-zinc-400 hover:text-white'
@@ -187,8 +187,8 @@ export const About = forwardRef<HTMLElement>((_, ref) => {
                 As the creative frontend developer behind WebGonex, I work with startups and local businesses looking to establish a credible, high-impact digital presence. I focus on clean semantic code, high cross-device responsiveness, and reliable deployment workflows that make websites fast, maintainable, and memorable.
               </p>
 
-              {/* 2-Column Responsive Specializations Grid on Mobile & Desktop */}
-              <div className="grid grid-cols-2 gap-3 sm:gap-4 pt-2">
+              {/* 2-Column Responsive Specializations Grid */}
+              <div className="grid grid-cols-1 sm:grid-cols-2 gap-3 sm:gap-4 pt-2">
                 <div className="p-3 sm:p-4 rounded-xl bg-white/[0.02] border border-white/[0.08] min-w-0">
                   <div className="text-brand-red font-mono text-[10px] sm:text-xs uppercase tracking-wider font-semibold mb-1 truncate">
                     Specialization 01
@@ -278,7 +278,7 @@ export const About = forwardRef<HTMLElement>((_, ref) => {
                           Verified Credential
                         </span>
                       </div>
-                      <h5 className="text-white font-semibold text-xs sm:text-sm truncate">
+                      <h5 className="text-white font-semibold text-xs sm:text-sm leading-snug break-words">
                         Tech Fundamentals &amp; Employability Skilling Programme
                       </h5>
                       <p className="text-zinc-400 text-[11px] sm:text-xs mt-0.5">
@@ -311,7 +311,7 @@ export const About = forwardRef<HTMLElement>((_, ref) => {
 
                 <div className="p-3.5 sm:p-4 rounded-xl bg-white/[0.02] border border-white/10 hover:border-brand-red/40 transition-colors min-w-0">
                   <div className="flex items-center justify-between gap-2">
-                    <h5 className="text-white font-semibold text-xs sm:text-sm truncate">
+                    <h5 className="text-white font-semibold text-xs sm:text-sm leading-snug break-words">
                       AI Fundamentals: Language and Vision in AI
                     </h5>
                     <span className="text-brand-red font-mono text-[11px] sm:text-xs flex-shrink-0">2026</span>
@@ -321,7 +321,7 @@ export const About = forwardRef<HTMLElement>((_, ref) => {
 
                 <div className="p-3.5 sm:p-4 rounded-xl bg-white/[0.02] border border-white/10 hover:border-brand-red/40 transition-colors min-w-0">
                   <div className="flex items-center justify-between gap-2">
-                    <h5 className="text-white font-semibold text-xs sm:text-sm truncate">Python For Beginners</h5>
+                    <h5 className="text-white font-semibold text-xs sm:text-sm leading-snug break-words">Python For Beginners</h5>
                     <span className="text-brand-red font-mono text-[11px] sm:text-xs flex-shrink-0">2024</span>
                   </div>
                   <p className="text-zinc-400 text-[11px] sm:text-xs mt-1">SimplyLearn</p>
@@ -329,7 +329,7 @@ export const About = forwardRef<HTMLElement>((_, ref) => {
 
                 <div className="p-3.5 sm:p-4 rounded-xl bg-white/[0.02] border border-white/10 hover:border-brand-red/40 transition-colors min-w-0">
                   <div className="flex items-center justify-between gap-2">
-                    <h5 className="text-white font-semibold text-xs sm:text-sm truncate">
+                    <h5 className="text-white font-semibold text-xs sm:text-sm leading-snug break-words">
                       Front End Web Application Development
                     </h5>
                     <span className="text-brand-red font-mono text-[11px] sm:text-xs flex-shrink-0">2023</span>
@@ -376,19 +376,19 @@ export const About = forwardRef<HTMLElement>((_, ref) => {
               </div>
             )}
 
-            <div className="mt-4 pt-3 border-t border-white/10 flex items-center justify-between">
+            <div className="mt-4 pt-3 border-t border-white/10 flex flex-col xs:flex-row items-start xs:items-center justify-between gap-3">
               <span className="text-xs font-mono text-emerald-400 flex items-center gap-1.5">
-                <CheckCircle2 className="w-4 h-4" />
+                <CheckCircle2 className="w-4 h-4 shrink-0" />
                 <span>Credential Authenticated</span>
               </span>
               <a
                 href={previewCert.image}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="px-3.5 py-1.5 rounded-lg bg-brand-red hover:bg-brand-red-light text-white text-xs font-semibold flex items-center gap-1.5 transition-colors shadow-lg"
+                className="w-full xs:w-auto px-3.5 py-1.5 rounded-lg bg-brand-red hover:bg-brand-red-light text-white text-xs font-semibold flex items-center justify-center gap-1.5 transition-colors shadow-lg min-h-[36px]"
               >
                 <span>Open Full Certificate</span>
-                <ArrowUpRight className="w-3.5 h-3.5" />
+                <ArrowUpRight className="w-3.5 h-3.5 shrink-0" />
               </a>
             </div>
           </div>
