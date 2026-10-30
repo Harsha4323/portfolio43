@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>WebGonex | Freelancer Portfolio</title>
+    <link rel="icon" type="image/png" href="./webgonex-emblem.png" />
+    <link rel="apple-touch-icon" href="./webgonex-emblem.png" />
+    <meta name="description" content="WebGonex — Creative Freelancer Portfolio by Harsha T. Building modern, responsive websites and high-impact digital experiences." />
+    <meta name="theme-color" content="#070709" />
+
+    <!-- Google Fonts: Syne (Display/Absans style), Plus Jakarta Sans (Editorial Body), Space Grotesk (Tech Details), Caveat (Poster Script) -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Caveat:wght@600;700&family=Plus+Jakarta+Sans:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;1,400&family=Space+Grotesk:wght@400;500;600;700&family=Syne:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+
+    <!-- Tailwind CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+      tailwind.config = {
+        darkMode: 'class',
+        theme: {
+          extend: {
+            colors: {
+              brand: {
+                red: '#FF2626',
+                'red-light': '#FF4D4D',
+                'red-dark': '#CC1111',
+                'red-glow': 'rgba(255, 38, 38, 0.45)',
+                dark: '#070709',
+                card: '#0D0D12',
+                surface: '#13131B',
+                'surface-light': '#1A1A24',
+                border: 'rgba(255, 255, 255, 0.09)',
+                'border-hover': 'rgba(255, 38, 38, 0.45)',
+                muted: '#9494A8',
+              }
+            },
+            fontFamily: {
+              display: ['Syne', 'sans-serif'],
+              body: ['Plus Jakarta Sans', 'sans-serif'],
+              mono: ['Space Grotesk', 'monospace'],
+              script: ['Caveat', 'cursive'],
+            },
+            animation: {
+              'pulse-slow': 'pulse 3s cubic-bezier(0.4, 0, 0.6, 1) infinite',
+              'float': 'float 6s ease-in-out infinite',
+              'glow': 'glow 3s ease-in-out infinite alternate',
+              'shimmer': 'shimmer 2.5s infinite',
+            },
+            keyframes: {
+              float: {
+                '0%, 100%': { transform: 'translateY(0px)' },
+                '50%': { transform: 'translateY(-8px)' },
+              },
+              glow: {
+                '0%': { opacity: '0.4', filter: 'blur(20px)' },
+                '100%': { opacity: '0.8', filter: 'blur(30px)' },
+              },
+              shimmer: {
+                '0%': { transform: 'translateX(-100%)' },
+                '100%': { transform: 'translateX(200%)' },
+              }
+            }
+          }
+        }
+      }
+    </script>
+    <link rel="stylesheet" href="/index.css" />
+  </head>
+  <body class="bg-[#070709] text-white font-body antialiased selection:bg-[#FF2626] selection:text-white overflow-x-hidden min-h-screen">
+    <div id="root"></div>
+    <script type="module" src="/index.tsx"></script>
+  </body>
+</html>
